@@ -1,0 +1,23 @@
+{
+  "name": "codenames-server",
+  "version": "1.0.0",
+  "description": "backend websockets server for codenames",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stofferd/codenames-server.git"
+  },
+  "author": "stofferd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stofferd/codenames-server/issues"
+  },
+  "homepage": "https://github.com/stofferd/codenames-server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.4"
+  }
+}
