@@ -2,6 +2,8 @@ var app = require("express")();
 var http = require("http").createServer(app);
 require("dotenv").config();
 
+const port = process.env.PORT || 3000;
+
 const io = require("socket.io")(http, {
   cors: {
     origin: process.env.FRONTEND_URL,
@@ -33,6 +35,6 @@ io.sockets.on("connection", function (socket) {
   });
 });
 
-http.listen(3000, () => {
-  console.log("listening on *:3000");
+http.listen(port, () => {
+  console.log(`listening on *:${port}`);
 });
