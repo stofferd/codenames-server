@@ -1,8 +1,10 @@
 var app = require("express")();
 var http = require("http").createServer(app);
+require("dotenv").config();
+
 const io = require("socket.io")(http, {
   cors: {
-    origin: "http://localhost:3001",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
   },
 });
