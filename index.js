@@ -30,8 +30,8 @@ io.sockets.on("connection", function (socket) {
     io.to(gameHash).emit("endTurn", playerIndex);
   });
 
-  socket.on("makeGuess", ({ gameHash, index, answer }) => {
-    io.to(gameHash).emit("makeGuess", index, answer);
+  socket.on("makeGuess", ({ gameHash, playerIndex, index, answer }) => {
+    io.to(gameHash).emit("makeGuess", playerIndex, index, answer);
   });
 });
 
