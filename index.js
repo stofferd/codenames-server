@@ -19,8 +19,15 @@ io.sockets.on("connection", function (socket) {
   socket.on("startGame", async ({ gameHash, socketID }) => {
     const ids = await io.in(gameHash).allSockets();
     const socketIndex = [...ids].indexOf(socketID);
-
     io.to(socketID).emit("startGame", socketIndex);
+  });
+
+  socket.on("endTurn", ({ gameHash, playerIndex }) => {
+    io.to(gameHash).emit("endTurn", playerIndex);
+  });
+
+  socket.on("makeGuess", ({ gameHash, index, answer }) => {
+    io.to(gameHash).emit("makeGuess", index, answer);
   });
 });
 
